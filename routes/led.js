@@ -1,11 +1,12 @@
 let express = require('express');
 var jsonfile = require('jsonfile')
 let path =require('path');
+let cors = require('cors');
 let fs = require('fs');
 let router = express.Router();
 let file = './data/led.json';
 
-
+router.use(cors())
 let op;
 op=jsonfile.readFileSync(file);
 

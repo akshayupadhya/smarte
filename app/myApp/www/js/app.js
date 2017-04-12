@@ -8,11 +8,12 @@ app=angular.module('starter', ['ionic']);
 app.controller("response",function ($scope,$http) {
   $http({
     method:"GET",
-    url:"https://powerful-beach-46971.herokuapp.com/led/"
+    url:"http://localhost:3000/led/"
   }).then(function (data) {
+    console.log("hi");
     console.log(data);
   })
-})
+});
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
