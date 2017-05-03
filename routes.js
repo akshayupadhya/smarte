@@ -8,9 +8,10 @@ var router = express.Router();
 
 var index = require('./routes/index');
 var led = require('./routes/led');
-
+var sens= require('./routes/sensors');
 router.use('/', index);
 router.use('/led', led);
+router.use('/s',sens);
 
 module.exports=router;
 // catch 404 and forward to error handler

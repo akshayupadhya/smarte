@@ -84,5 +84,6 @@ router.get('/:swnum',(req,res,next)=>{
       break;
   }
 });
-console.log(JSON.stringify(op.switch0));
+
+
 module.exports = router;
