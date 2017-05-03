@@ -1,5 +1,7 @@
 var express = require('express');
+let cors = require('cors');
 var router = express.Router();
+router.use(cors())
 let op ={};
 op.temp={};
 op.light={};
@@ -10,6 +12,7 @@ op.humidity.value=0
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.json(op);
+    console.log(op);
 });
 router.get('/:sensor/:value',(req,res,next)=>{
   console.log(req.params.sensor);

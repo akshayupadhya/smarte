@@ -7,8 +7,8 @@ let router = express.Router();
 let file = './data/led.json';
 
 router.use(cors())
-let op;
-op=jsonfile.readFileSync(file);
+let op={};
+//op=jsonfile.readFileSync(file);
 
 
 router.get('/',(req,res,next)=>{
@@ -25,58 +25,42 @@ router.get('/:swnum',(req,res,next)=>{
     case 0:
       op.switch0=0;
       res.send("sw0 0ff");
-      jsonfile.writeFile(file, op,function (err) {
-  console.error(err);
-})
+
       break;
       case 1:
         op.switch0=1;
         res.send("sw0 0n");
-        jsonfile.writeFile(file,op,function (err) {
-  console.error(err);
-})
+
         break;
         case 2:
           op.switch1=0;
           res.send("sw1 0ff");
-          jsonfile.writeFile(file ,op,function (err) {
-  console.error(err);
-})
+
           break;
       case 3:
         op.switch1=1;
         res.send("sw1 0n");
-        jsonfile.writeFile(file, op,function (err) {
-  console.error(err);
-})
+
         break;
       case 4:
           op.switch2=0;
           res.send("sw2 0ff");
-          jsonfile.writeFile(file, op,function (err) {
-  console.error(err);
-})
+
         break;
       case 5:
           op.switch2=1;
           res.send("sw2 0n");
-          jsonfile.writeFile(file, op,function (err) {
-  console.error(err);
-})
+
           break;
       case 6:
             op.switch3=0;
             res.send("sw3 0ff");
-            jsonfile.writeFile(file,op, function (err) {
-  console.error(err);
-})
+
             break;
       case 7:
           op.switch3=1;
           res.send("sw3 0n");
-          jsonfile.writeFile(file, op,function (err) {
-  console.error(err);
-})
+
               break;
     default:
       res.send("failure");
