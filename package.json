@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node  ./bin/www ",
+    "start": "nodemon  ./bin/www ",
     "compile": "6to5 --modules common ./bin/www > dist/index.js"
   },
   "dependencies": {
@@ -14,6 +14,8 @@
     "express": "~4.14.0",
     "jade": "~1.11.0",
     "jsonfile": "^2.4.0",
+    "kerberos": "0.0.23",
+    "mongodb": "^2.2.26",
     "morgan": "~1.7.0",
     "nodemon": "^1.11.0",
     "serve-favicon": "~2.3.0"
