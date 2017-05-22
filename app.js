@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var led = require('./routes/led');
 var sensors= require('./routes/sensors');
+var rover= require('./routes/rover');
 var app = express();
 
 // view engine setup
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/led', led);
 app.use('/sensors',sensors);
+app.use('/rover',rover);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
